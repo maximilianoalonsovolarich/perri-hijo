@@ -1,0 +1,145 @@
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 1200px;
+    flex-grow: 1;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+    /* Espacio entre la sección principal y el footer */
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+    }
+}
+
+.main-content {
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+#dogImage {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+#dogImageModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#dogImageModal img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 500px;
+}
+
+#dogImageModal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#dogImageModal .close:hover,
+#dogImageModal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.favorite-item {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+}
+
+.favorite-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 150px;
+}
+
+.favorite-item .details {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px;
+    margin-top: 4px;
+    text-align: center;
+    opacity: 1;
+}
+
+.favorite-item .delete-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: transparent;
+    color: red;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.like-effect {
+    animation: likeEffect 0.5s ease-out forwards;
+}
+
+@keyframes likeEffect {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.aspect-w-16 {
+    aspect-ratio: 16 / 9;
+}
+
+footer {
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
